@@ -1,0 +1,12 @@
+CREATE TABLE Categories (
+    Id SERIAL PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Products (
+    Id SERIAL PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    CategoryId INT NOT NULL,
+    FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
+);
